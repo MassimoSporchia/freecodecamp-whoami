@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 
+app.get('/', function(req, res) {
+    res.redirect('/api/whoami');
+});
 app.get('/api/whoami',function(req,res){
    var uagent = req.headers['user-agent']; 
    var ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
